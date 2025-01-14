@@ -14,10 +14,11 @@ conda activate AnyGPT
 mv requirements.txt requirements.in
 pip install pip-tools
 
-# Remove versions for specific packages
-sed -i '/torch/d' requirements.in
-sed -i '/torchaudio/d' requirements.in
-sed -i '/torchvision/d' requirements.in
+sed -i 's/torch[^ ]*/torch/' requirements.in
+sed -i 's/torchaudio[^ ]*/torchaudio/' requirements.in
+sed -i 's/torchvision[^ ]*/torchvision/' requirements.in
+sed -i '/gradio==3.50.0/d' requirements.in
+
 
 # Add torch, torchaudio, and torchvision without version constraints
 echo -e "torch\ntorchaudio\ntorchvision" >> requirements.in
