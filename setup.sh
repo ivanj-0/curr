@@ -25,4 +25,14 @@ echo -e "\ntorch\ntorchaudio\ntorchvision" >> requirements.in
 
 # Compile and sync dependencies
 pip-compile requirements.in
+
+# Update the package list
+sudo apt-get update -y
+
+# Install build-essential package
+sudo apt-get install -y build-essential
+
+# Install python3-dev package
+sudo apt-get install -y python3-dev
+
 pip-sync requirements.txt
