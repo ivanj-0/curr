@@ -30,4 +30,4 @@ fi
 echo "Running setup.sh inside the container..."
 docker exec -d "$CONTAINER_NAME" /bin/bash -c "chmod +x setup.sh && ./setup.sh"
 # Tail the logs to keep seeing what's happening
-docker logs -f "$CONTAINER_NAME"
+docker logs "$CONTAINER_NAME"
