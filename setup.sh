@@ -21,7 +21,7 @@ sed -i '/gradio==3.50.0/d' requirements.in
 
 
 # Add torch, torchaudio, and torchvision without version constraints
-echo -e "torch\ntorchaudio\ntorchvision" >> requirements.in
+echo -e "\ntorch\ntorchaudio\ntorchvision" >> requirements.in
 
 # Compile and sync dependencies
 pip-compile requirements.in
