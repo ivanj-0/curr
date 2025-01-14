@@ -1,6 +1,7 @@
 #!/bin/bash
 
 CONTAINER_NAME="anygpt_final"
+IMAGE_NAME="myrepo/myimage:latest"  # Define your image name and tag here
 
 # Function to check if a Docker container exists
 container_exists() {
@@ -25,7 +26,6 @@ else
     echo "Container is already running."
 fi
 
-
 # Run setup.sh inside the container
 echo "Running setup.sh inside the container..."
-docker exec -it "$CONTAINER_NAME" /bin/bash -c "chmod +x setup.sh && setup.sh"
+docker exec -it "$CONTAINER_NAME" /bin/bash -c "chmod +x setup.sh && ./setup.sh"
